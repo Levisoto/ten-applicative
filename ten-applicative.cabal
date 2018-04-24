@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 25070a5fbc629c18a23f03a4da56c526865ed775f905e21e6ad89471faa6362c
+-- hash: aced441041d81b860570f5c66afa0578164cea8bef63b40cbeee30df94750805
 
 name:           ten-applicative
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
   build-depends:
       base >=4.7 && <5
   exposed-modules:
+      AParser
       Lib
   other-modules:
       Paths_ten_applicative
