@@ -23,3 +23,10 @@ instance Functor Parser where
 ------------------------------------------------------------------------------
   --
   --
+-- Problem 2
+-- I need to implement a Applicative instance of Parser
+instance Applicative Parser where
+  pure f = Parser (\input -> Just (f,input))
+  (Parser p) <*> (Parser q) = Parser (\input -> case p input of
+                                                  Nothing -> Nothing
+                                                  Just (x,y) -> first x <$> q y)
