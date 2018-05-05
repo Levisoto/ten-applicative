@@ -30,3 +30,14 @@ instance Applicative Parser where
   (Parser p) <*> (Parser q) = Parser (\input -> case p input of
                                                   Nothing -> Nothing
                                                   Just (x,y) -> first x <$> q y)
+
+-- Problem 3
+-- I'll create some functions to test them and show their behavior
+abParser :: Parser (Char, Char)
+abParser = pure (\x y -> (x,y)) <*> char 'a' <*> char 'b'
+
+abParser_ :: Parser ()
+abParser_ = pure (\x y -> ()) <*> char 'a' <*> char 'b'
+
+intPair :: Parser [Integer]
+intPair = pure (\x _ y -> [x,y]) <*> posInt <*> char ' ' <*> posInt
