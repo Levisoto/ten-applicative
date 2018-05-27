@@ -1,8 +1,8 @@
--- This file has been generated from package.yaml by hpack version 0.20.0.
+-- This file has been generated from package.yaml by hpack version 0.28.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: aced441041d81b860570f5c66afa0578164cea8bef63b40cbeee30df94750805
+-- hash: 95f4b9d60dd031fa2cf153fba612a1608dc02b411a38fff885ac68b5839fbb3e
 
 name:           ten-applicative
 version:        0.1.0.0
@@ -16,7 +16,6 @@ license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
 cabal-version:  >= 1.10
-
 extra-source-files:
     ChangeLog.md
     README.md
