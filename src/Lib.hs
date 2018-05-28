@@ -2,6 +2,7 @@ module Lib where
 
 import AParser
 import Control.Applicative
+import Data.Char
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
@@ -54,3 +55,12 @@ instance Alternative Parser where
   Parser p <|> Parser q = Parser (\input -> case p input of
                                             Nothing -> q input
                                             Just _ -> p input)
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+-- Problem 5
+-- I'll write the function to parsering int and Uppercase words 
+intOrUppercase :: Parser ()
+intOrUppercase = getInt <|> getUppercase
+  where getInt = pure (\x -> ()) <*> posInt
+        getUppercase = pure (\x -> ()) <*> (satisfy isUpper)
